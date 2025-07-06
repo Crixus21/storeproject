@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col bg-dark-subtle py-2">
+            <a href="" class="text-white navbar-brand bg-primary rounded-pill badge fs-6">Online Store</a>
+            <app-cart-summary></app-cart-summary>  
+        </div>
+    </div>
+    <div class="row text-white">
+        <div class="col-3 bg-white p-2 text-dark d-flex flex-column justify-content-sm-start">
+            <button class="btn btn-primary m-1" (click)="changeCategory()" [class.active]="!selectedCategory">HOME</button>
+            <button class="btn btn-primary m-1" *ngFor="let category of categories" (click)="changeCategory(category)" [class.active]="category == selectedCategory"> {{ category }} </button>
+            <div class="d-flex justify-content-start mr-1">
+                    <select class="form-select w-auto" [value]="productsPerPage" (change)="changePageSize($event)">
+                        <option value="4">4 products</option>
+                        <option value="6">6 products</option>
+                        <option value="8">8 products</option>
+                    </select>
+            </div>
+        </div>
+        <div class="col-9 bg-secondary p-2">Products {{ products.length }} 
+            <div class="d-flex w-100 flex-column p-0">
+                <div *ngFor="let product of products" class="card m-1 p-1 bg-light">
+                    <h4>
+                        {{ product.name }}
+                    
+                        <span class="badge rounded-pill bg-primary float-end">
+                            {{ product.price | currency:"USD":"symbol":"2.2-2" }}
+                        </span>
+                    </h4>
+                    <div class="card-text bg-white p-1">
+                        {{ product.description }}
+                        <button class="btn btn-info btn-sm float-end" (click)="addProductToCart(product)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <div class="btn-group float-end">
+                        <button class="btn btn-outline-dark" *ngFor="let pageNumber of pageNumbers" (click)="changePage(pageNumber)" [class.active]="pageNumber == selectedPage"> {{ pageNumber }} </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
