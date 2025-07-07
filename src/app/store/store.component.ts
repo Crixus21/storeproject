@@ -6,6 +6,9 @@ import { CommonModule } from '@angular/common';
 import { CartSummaryComponent } from '../cart-summary/cart-summary.component';
 import { Cart } from './cart.model';
 import { cartSharedImports } from './cartSharedImports';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   standalone: true,
@@ -23,7 +26,7 @@ export class StoreComponent implements OnInit {
   public selectedPage = 1;
 
 
-  constructor(private repository : ProductRepository, private cart : Cart) {
+  constructor(private repository : ProductRepository, private cart : Cart, private router : Router) {
 
   }
 
@@ -69,6 +72,7 @@ get pageNumbers() : number[] {
 
 addProductToCart (product : Product) {
   this.cart.addLine(product);
+  this.router.navigateByUrl("/cart");
 }
 
 
