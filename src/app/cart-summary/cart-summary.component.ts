@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Cart } from '../store/cart.model';
-import { CommonEngine } from '@angular/ssr/node';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-cart-summary',
-  imports: [ CommonModule],
+  imports: [ CommonModule, RouterModule],
   templateUrl: './cart-summary.component.html',
   styleUrl: './cart-summary.component.css'
 })
