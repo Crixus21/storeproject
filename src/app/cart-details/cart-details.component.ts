@@ -9,7 +9,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-cart-details',
   imports: [ RouterModule, CommonModule ],
   templateUrl: './cart-details.component.html',
-  styleUrl: './cart-details.component.css'
+  styleUrl: './cart-details.component.css',
+  providers : [ ]
 })
 export class CartDetailsComponent {
   constructor(public cart : Cart) {

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../Model/product.model';
-import { storeProviders } from './store.providers';
 import { ProductRepository } from '../Model/product.repository';
 import { CommonModule } from '@angular/common';
 import { CartSummaryComponent } from '../cart-summary/cart-summary.component';
@@ -16,7 +15,7 @@ import { Router } from '@angular/router';
   imports: [ CommonModule, CartSummaryComponent, ...cartSharedImports ],
   templateUrl: './store.component.html',
   styleUrl: './store.component.css',
-  providers: [ storeProviders ]
+  providers: [ ]
 
 })
 export class StoreComponent implements OnInit {

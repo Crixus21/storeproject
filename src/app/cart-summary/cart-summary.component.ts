@@ -8,7 +8,8 @@ import { RouterModule } from '@angular/router';
   selector: 'app-cart-summary',
   imports: [ CommonModule, RouterModule],
   templateUrl: './cart-summary.component.html',
-  styleUrl: './cart-summary.component.css'
+  styleUrl: './cart-summary.component.css',
+  providers: [ ]
 })
 export class CartSummaryComponent implements OnInit {
 
