@@ -5,14 +5,14 @@ import { CommonModule } from '@angular/common';
 import { CartSummaryComponent } from '../cart-summary/cart-summary.component';
 import { Cart } from './cart.model';
 import { cartSharedImports } from './cartSharedImports';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 
 
 @Component({
   standalone: true,
   selector: 'app-store',
-  imports: [ CommonModule, CartSummaryComponent, ...cartSharedImports ],
+  imports: [ CommonModule, CartSummaryComponent, ...cartSharedImports, RouterModule ],
   templateUrl: './store.component.html',
   styleUrl: './store.component.css',
   providers: [ ]

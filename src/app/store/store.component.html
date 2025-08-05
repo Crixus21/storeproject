@@ -9,6 +9,9 @@
         <div class="col-3 bg-white p-2 text-dark d-flex flex-column justify-content-sm-start">
             <button class="btn btn-primary m-1" (click)="changeCategory()" [class.active]="!selectedCategory">HOME</button>
             <button class="btn btn-primary m-1" *ngFor="let category of categories" (click)="changeCategory(category)" [class.active]="category == selectedCategory"> {{ category }} </button>
+            <!-- Admin button -->
+            <button class="btn btn-primary mt-3" [routerLink]="['/admin']"  >Admin</button>
+
             <div class="d-flex justify-content-start mr-1">
                     <select class="form-select w-auto" [value]="productsPerPage" (change)="changePageSize($event)">
                         <option value="4">4 products</option>
